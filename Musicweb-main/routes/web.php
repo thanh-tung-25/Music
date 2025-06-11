@@ -8,13 +8,13 @@ use App\Http\Controllers\Admin\GenreController;
 use App\Http\Controllers\Admin\PlaylistController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
-
+use App\Http\Controllers\HomeController;
 // Route Auth (Đăng nhập, đăng ký)
 Auth::routes();
 
 // Trang chủ → Redirect đến trang login nếu chưa đăng nhập
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/music');
 });
 
 Route::prefix('admin')->middleware(['auth', \App\Http\Middleware\AdminMiddleware::class])->group(function () {
@@ -31,4 +31,8 @@ Route::prefix('admin')->middleware(['auth', \App\Http\Middleware\AdminMiddleware
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Trang chủ công khai (frontend)
+Route::get('/music', [App\Http\Controllers\HomeController::class, 'index'])->name('music.index');
+Route::get('/music/{id}', [HomeController::class, 'show'])->name('music.show');
+
 ?>
