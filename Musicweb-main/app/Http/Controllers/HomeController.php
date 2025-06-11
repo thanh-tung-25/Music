@@ -51,6 +51,7 @@ class HomeController extends Controller
     public function playlist($name)
     {
         $songs = Song::with(['artist', 'genre'])->inRandomOrder()->take(6)->get();
-        return view('frontend.playlist_detail', compact('name', 'songs'));
-    }
+    return view('frontend.playlist_detail', compact('name', 'songs'));
+}
+   
 }

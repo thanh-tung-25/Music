@@ -25,6 +25,7 @@ Route::prefix('admin')->middleware(['auth', \App\Http\Middleware\AdminMiddleware
     Route::resource('songs', SongController::class);
     Route::resource('genres', GenreController::class);
     Route::resource('playlists', PlaylistController::class);
+    Route::get('/artists', [HomeController::class, 'artists'])->name('music.artists');
 });
 
 // Route login & logout
@@ -34,5 +35,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Trang chủ công khai (frontend)
 Route::get('/music', [App\Http\Controllers\HomeController::class, 'index'])->name('music.index');
 Route::get('/music/{id}', [HomeController::class, 'show'])->name('music.show');
+Route::get('/playlist/{name}', [HomeController::class, 'playlist'])->name('music.playlist');
+Route::get('/genres', [HomeController::class, 'genres'])->name('genres.index');
 
 ?>
