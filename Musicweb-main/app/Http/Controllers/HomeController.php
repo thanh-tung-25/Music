@@ -6,7 +6,7 @@ use App\Models\Song;
 use App\Models\Artist;
 use App\Models\Genre;
 use Illuminate\Http\Request;
-
+use App\Models\Playlist;
 class HomeController extends Controller
 {
     /**
@@ -26,7 +26,7 @@ class HomeController extends Controller
 
         return view('frontend.home', compact('songs', 'keyword'));
     }
-
+    
     /**
      * Hiển thị chi tiết bài hát theo ID.
      */
@@ -47,9 +47,13 @@ class HomeController extends Controller
     return view('frontend.artists', compact('artists'));
 }
     public function playlist($name)
-    {
-        $songs = Song::with(['artist', 'genre'])->inRandomOrder()->take(6)->get();
-    return view('frontend.playlist_detail', compact('name', 'songs'));
+{
+    $playlist = Playlist::where('name', $name)->firstOrFail(); // Gây lỗi 404 nếu không tìm thấy
+
+    $songs = $playlist->songs()->with(['artist', 'genre'])->get();
+
+    return view('frontend.playlist', compact('playlist', 'songs'));
 }
+
    
 }

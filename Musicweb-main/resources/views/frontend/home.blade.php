@@ -42,19 +42,23 @@
     <div class="mt-12">
         <h2 class="text-3xl font-bold mb-4 text-purple-400">🔥 Playlist nổi bật</h2>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-purple-700 p-6 rounded-lg shadow-lg text-white hover:bg-purple-800 transition">
+            <a href="{{ route('music.playlist', ['name' => 'Chill Vibes']) }}"
+            class="bg-purple-700 p-6 rounded-lg shadow-lg text-white hover:bg-purple-800 transition block">
                 <h3 class="text-2xl font-bold mb-2">🎧 Chill Vibes</h3>
                 <p class="text-sm text-purple-100">Âm nhạc thư giãn mỗi ngày.</p>
-            </div>
-            <div class="bg-blue-700 p-6 rounded-lg shadow-lg text-white hover:bg-blue-800 transition">
+            </a>
+            <a href="{{ route('music.playlist', ['name' => 'Trending']) }}"
+            class="bg-blue-700 p-6 rounded-lg shadow-lg text-white hover:bg-blue-800 transition block">
                 <h3 class="text-2xl font-bold mb-2">🔥 Trending</h3>
                 <p class="text-sm text-blue-100">Top hit đang hot nhất hiện nay.</p>
-            </div>
-            <div class="bg-pink-600 p-6 rounded-lg shadow-lg text-white hover:bg-pink-700 transition">
+            </a>
+            <a href="{{ route('music.playlist', ['name' => 'Buồn Lặng']) }}"
+            class="bg-pink-600 p-6 rounded-lg shadow-lg text-white hover:bg-pink-700 transition block">
                 <h3 class="text-2xl font-bold mb-2">💔 Buồn Lặng</h3>
                 <p class="text-sm text-pink-100">Những giai điệu sâu lắng cho tâm trạng.</p>
-            </div>
+            </a>
         </div>
     </div>
+
     
 @endsection

@@ -32,11 +32,15 @@ Route::prefix('admin')->middleware(['auth', \App\Http\Middleware\AdminMiddleware
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Trang chủ công khai (frontend)
 Route::get('/music', [HomeController::class, 'index'])->name('music.index');
 Route::get('/music/{id}', [HomeController::class, 'show'])->name('music.show');
+
 Route::get('/playlist/{name}', [HomeController::class, 'playlist'])->name('music.playlist');
 Route::get('/genres', [HomeController::class, 'genres'])->name('genres.index');
-Route::get('/artists', [HomeController::class, 'artists'])->name('music.artists');
+
 Route::get('/artists', [HomeController::class, 'artists'])->name('artists');
+Route::get('/playlist/{name}', [HomeController::class, 'playlist'])->name('music.playlist');
+
 ?>
