@@ -35,19 +35,17 @@ class HomeController extends Controller
         $song = Song::with(['artist', 'genre'])->findOrFail($id);
         return view('frontend.song_detail', compact('song'));
     }
-
-    public function artists()
-    {
-        $artists = Artist::all();
-        return view('frontend.artists', compact('artists'));
-    }
-
+    
     public function genres()
     {
         $genres = Genre::all();
         return view('frontend.genres', compact('genres'));
     }
-
+    public function artists()
+{
+    $artists = \App\Models\Artist::all();
+    return view('frontend.artists', compact('artists'));
+}
     public function playlist($name)
     {
         $songs = Song::with(['artist', 'genre'])->inRandomOrder()->take(6)->get();

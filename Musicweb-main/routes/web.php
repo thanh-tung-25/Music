@@ -14,7 +14,7 @@ Auth::routes();
 
 // Trang chủ → Redirect đến trang login nếu chưa đăng nhập
 Route::get('/', function () {
-    return redirect('/music');
+    return redirect('/login');
 });
 
 Route::prefix('admin')->middleware(['auth', \App\Http\Middleware\AdminMiddleware::class])->group(function () {
@@ -38,4 +38,5 @@ Route::get('/music/{id}', [HomeController::class, 'show'])->name('music.show');
 Route::get('/playlist/{name}', [HomeController::class, 'playlist'])->name('music.playlist');
 Route::get('/genres', [HomeController::class, 'genres'])->name('genres.index');
 Route::get('/artists', [HomeController::class, 'artists'])->name('music.artists');
+Route::get('/artists', [HomeController::class, 'artists'])->name('artists');
 ?>
