@@ -60,10 +60,10 @@ CREATE DATABASE defaultdb;
 
 ### Cấu hình `.env`
 ```env
-DB_CONNECTION=mysql
+DB_CONNECTION=sqlite
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=musicweb_management
+DB_DATABASE=C:/xampp/htdocs/Music/Musicweb-main/database/database.sqlite
 DB_USERNAME=root
 DB_PASSWORD=
 ```
