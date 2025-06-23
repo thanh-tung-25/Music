@@ -38,8 +38,7 @@ graph TD;
     C --> F[Sắp xếp];
 ```
 ## Biểu đồ database Class diagram
-
-
+<img src="img/Biểu đồ database Class diagram.png" alt="Tenant UI Screenshot" width="600"/>
 ## Chu Trình Phát Triển
 ### Các Giai Đoạn:
 1. **Analysis**: Phân tích yêu cầu và thiết kế database
