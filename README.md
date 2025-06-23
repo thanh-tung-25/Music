@@ -38,7 +38,9 @@ graph TD;
     C --> F[Sắp xếp];
 ```
 ## Biểu đồ database Class diagram
-![Class_diagram](Class_diagram.png)
+
+![Class Diagram](img/Class_diagram.png)
+
 ## Chu Trình Phát Triển
 ### Các Giai Đoạn:
 1. **Analysis**: Phân tích yêu cầu và thiết kế database
