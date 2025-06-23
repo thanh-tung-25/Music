@@ -37,6 +37,8 @@ graph TD;
     C --> E[Tìm kiếm];
     C --> F[Sắp xếp];
 ```
+## Biểu đồ database Class diagram
+
 
 ## Chu Trình Phát Triển
 ### Các Giai Đoạn:
