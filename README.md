@@ -38,7 +38,7 @@ graph TD;
     C --> F[Sắp xếp];
 ```
 ## Biểu đồ database Class diagram
-<img src="img/Class_diagram.png" alt="Sơ đồ lớp hệ thống âm nhạc" width="600"/>
+<img src="img/Class_diagram.png" alt="Sơ đồ lớp hệ thống âm nhạc" width=""/>
 ## Chu Trình Phát Triển
 ### Các Giai Đoạn:
 1. **Analysis**: Phân tích yêu cầu và thiết kế database
