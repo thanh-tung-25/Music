@@ -4,10 +4,14 @@ services:
     runtime: php
     buildCommand: |
       composer install --no-dev
-      php artisan config:clear
-      php artisan key:generate
-      touch /tmp/database.sqlite
-    startCommand: php artisan serve --host 0.0.0.0 --port 10000
+    startCommand: |
+      php artisan config:clear &&
+      php artisan key:generate &&
+      mkdir -p /tmp &&
+      touch /tmp/database.sqlite &&
+      chmod -R 777 /tmp/database.sqlite &&
+      chmod -R 775 storage bootstrap/cache &&
+      php artisan serve --host=0.0.0.0 --port=10000
     envVars:
       - key: APP_ENV
         value: production
