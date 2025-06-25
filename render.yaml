@@ -2,13 +2,19 @@ services:
   - type: web
     name: music-laravel
     runtime: php
-    buildCommand: "composer install --no-dev"
-    startCommand: "php artisan serve --host 0.0.0.0 --port 10000"
+    buildCommand: |
+      composer install --no-dev
+      php artisan config:clear
+      php artisan key:generate
+      touch /tmp/database.sqlite
+    startCommand: php artisan serve --host 0.0.0.0 --port 10000
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
+      - key: APP_KEY
+        value: base64:wCpoRnEwmK3dgpKRI7l7s1nm2sbiU+DaGzDyg5Fg9Oo=
       - key: DB_CONNECTION
         value: sqlite
       - key: DB_DATABASE
