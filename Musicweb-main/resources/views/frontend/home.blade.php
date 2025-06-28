@@ -5,6 +5,7 @@
 
     <!-- Form tìm kiếm -->
     <form action="{{ route('music.index') }}" method="GET" class="mb-6">
+     @csrf 
         <input type="text" name="keyword" placeholder="Tìm kiếm bài hát..." value="{{ request('keyword') }}"
                class="px-4 py-2 rounded text-black w-1/2">
         <button type="submit" class="ml-2 px-4 py-2 bg-purple-600 rounded text-white hover:bg-purple-700">
